@@ -4,17 +4,39 @@
 
 /*Your Custom CSS Goes here*/
 
-h1 {
-  @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
+h1,
+h2,
+h3 {
+    @apply font-display;
 }
 
-h3 {
-  @apply text-2xl font-bold mb-3;
+.display::after {
+    content: "";
+    display: block;
+    position: absoulte;
+    width: 100%;
+    left: 200px;
+    height: 2px;
+    @apply bg-purple-500;
+}
+
+a {
+    @apply text-purple-500;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+a:hover {
+    @apply text-purple-300;
+    transition: color 0.2s;
+}
+
+html {
+    @apply text-white bg-black;
 }
 
 /* Syntax Highlighting*/
 
 body :not(pre) > code[class*="language-"],
 body pre[class*="language-"] {
-  @apply bg-gray-800;
+    @apply bg-gray-800;
 }

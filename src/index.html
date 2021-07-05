@@ -1,22 +1,61 @@
 ---
 layout: default
-title: Neat Starter
+title: John Greenow
 path: home
 ---
 
-<div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{title}}
-    </strong>
-  </h1>
-
-  <p>
-    <abbr title="netlify cms, eleventy, alpine js & tailwind css">NEAT</abbr>
-    Starter Template. Get Started by editing.
-    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code>
-  </p>
-
-  {% include "./_includes/partials/content.html" %}
+<div class="container mx-auto flex flex-col justify-center items-center">
+    <div class="max-w-screen-xl">
+        <header class="grid grid-flow-row grid-cols-2 gap-4 p-4">
+            <img
+                src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                alt="john"
+                class="col-span-2 sm:col-span-1"
+            />
+            <div
+                class="
+                    transform
+                    col-span-2
+                    sm:col-span-1
+                    md:-translate-x-24
+                    -translate-y-8
+                    my-auto
+                "
+            >
+                <h1
+                    class="
+                        display
+                        xl:text-8xl
+                        lg:text-6xl
+                        md:text-6xl
+                        sm:text-5xl
+                        text-4xl
+                        font-bold
+                    "
+                >
+                    Coaching, Communication, Connection
+                </h1>
+                <p class="max-w-prose pt-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Obcaecati, officia! Odit voluptate minima asperiores dolorem
+                    dignissimos optio impedit tempora sed magni recusandae.
+                    Numquam, consectetur vel? Corrupti, aliquid repudiandae quae
+                    adipisci <a>beatae exercitationem</a>, enim, minima ullam
+                    fugiat hic praesentium nostrum tenetur!
+                </p>
+            </div>
+        </header>
+    </div>
 </div>
+{% if quotes %}
+<div class="w-full bg-gray-900 flex flex-auto p-4 my-6 justify-center">
+    {% for testimonial in quotes.items %}
+    <blockquote class="p-5 m-3 border-purple-500 border-2 rounded max-w-md">
+        <p class="max-w-prose">{{testimonial.quote}}</p>
+        <p class="font-display text-center italic text-gray-400">
+            {{testimonial.name}}
+        </p>
+    </blockquote>
+    {% endfor %}
+</div>
+{% endif %}

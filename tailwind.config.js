@@ -1,19 +1,23 @@
 module.exports = {
-  purge: {
-    mode: "all",
-    content: ["./**/*.html"],
-    options: {
-      whitelist: [],
+    purge: {
+        mode: "all",
+        content: ["./**/*.html"],
+        options: {
+            whitelist: [],
+        },
     },
-  },
-  theme: {
-    container: {
-      center: true,
+    theme: {
+        container: {
+            center: true,
+        },
+        extend: {
+            colors: {},
+        },
+        fontFamily: {
+            sans: ["Roboto", "sans-serif"],
+            display: ["Work Sans", "sans-serif"],
+        },
     },
-    extend: {
-      colors: {},
-    },
-  },
-  variants: {},
-  plugins: [require("@tailwindcss/typography")],
+    variants: {},
+    plugins: [require("@tailwindcss/typography")],
 };
